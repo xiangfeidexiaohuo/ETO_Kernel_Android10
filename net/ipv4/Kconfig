@@ -693,7 +693,16 @@ config TCP_CONG_TSUNAMI
        ---help---
         This is basically TCP BBR with violence.
 
-
+config TCP_CONG_AGILESD
+        tristate "Agile-SD Congestion control"
+        default n
+        ---help---
+        
+        This is version 1.0 of Agile-SD TCP. It is a sender-side only. 
+        It contributes the Agility Factor (AF) to shorten the epoch time 
+        and to make TCP independent from RTT. AF reduces the sensitivity 
+        to packet losses, which in turn Agile-SD to achieve better throughput 
+        over high-speed networks.
 
 choice
 	prompt "Default TCP congestion control"
@@ -731,6 +740,9 @@ choice
 
 	config DEFAULT_BBR
 		bool "BBR" if TCP_CONG_BBR=y
+        
+        config DEFAULT_AGILESD
+		bool "AGILESD" if TCP_CONG_AGILESD=y
 
 	config DEFAULT_NANQINLANG
                 bool "NANQINLANG" if TCP_CONG_NANQINLANG=y
@@ -768,6 +780,7 @@ config DEFAULT_TCP_CONG
 	default "nanqinlang" if DEFAULT_NANQINLANG
 	default "bbrplus" if DEFAULT_BBRPLUS
 	default "tsunami" if DEFAULT_TSUNAMI
+        default "agilesd" if DEFAULT_AGILESD
 	default "cubic"
 
 config TCP_MD5SIG

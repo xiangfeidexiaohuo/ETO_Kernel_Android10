@@ -48,6 +48,7 @@ obj-$(CONFIG_TCP_CONG_BBR) += tcp_bbr.o
 obj-$(CONFIG_TCP_CONG_NANQINLANG) += tcp_nanqinlang.o
 obj-$(CONFIG_TCP_CONG_TSUNAMI) += tcp_tsunami.o
 obj-$(CONFIG_TCP_CONG_BBRPLUS) += tcp_bbrplus.o
+obj-$(CONFIG_TCP_CONG_AGILESD) += tcp_agilesd.o
 obj-$(CONFIG_TCP_CONG_BIC) += tcp_bic.o
 obj-$(CONFIG_TCP_CONG_CDG) += tcp_cdg.o
 obj-$(CONFIG_TCP_CONG_CUBIC) += tcp_cubic.o
