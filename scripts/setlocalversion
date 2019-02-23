@@ -64,7 +64,7 @@ scm_version()
 
 			# If we don't have a tag at all we print -g{commitish}.
 			else
-				printf '%s%s' -g $head
+				printf '%s%s'
 			fi
 		fi
 
@@ -72,7 +72,6 @@ scm_version()
 		if git config --get svn-remote.svn.url >/dev/null; then
 			printf -- '-svn%s' "`git svn find-rev $head`"
 		fi
-
 		# Check for uncommitted changes.
 		# First, with git-status, but --no-optional-locks is only
 		# supported in git >= 2.14, so fall back to git-diff-index if
@@ -83,7 +82,7 @@ scm_version()
 			git --no-optional-locks status -uno --porcelain 2>/dev/null ||
 			git diff-index --name-only HEAD
 		} | grep -qvE '^(.. )?scripts/package'; then
-			printf '%s' -dirty
+			printf '%s'
 		fi
 
 		# All done with git
