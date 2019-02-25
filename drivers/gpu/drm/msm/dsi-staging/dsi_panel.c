@@ -42,6 +42,9 @@
 
 #include "dsi_panel_mi.h"
 
+#ifdef CONFIG_KLAPSE
+#include "../sde/klapse.h"
+#endif
 
 /**
  * topology is currently defined by a set of following 3 values:
@@ -669,6 +672,11 @@ static int dsi_panel_update_backlight(struct dsi_panel *panel,
 	}
 
 	dsi = &panel->mipi_device;
+
+	
+#ifdef CONFIG_KLAPSE
+	set_rgb_slider(bl_lvl);
+#endif
 
 	if (panel->bl_config.dcs_type_ss)
 		rc = mipi_dsi_dcs_set_display_brightness_ss(dsi, bl_lvl);
