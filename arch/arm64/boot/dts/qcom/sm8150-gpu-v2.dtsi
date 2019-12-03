@@ -1,3 +1,4 @@
+
 /* Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -14,6 +15,16 @@
 	gpu_opp_table_v2: gpu_opp_table_v2 {
 		compatible = "operating-points-v2";
 
+		opp-805000000 {
+			opp-hz = /bits/ 64 <805000000>;
+			opp-microvolt = <RPMH_REGULATOR_LEVEL_TURBO_L1>;
+		};
+
+		opp-755000000 {
+			opp-hz = /bits/ 64 <755000000>;
+			opp-microvolt = <RPMH_REGULATOR_LEVEL_TURBO>;
+		};
+
 		opp-675000000 {
 			opp-hz = /bits/ 64 <675000000>;
 			opp-microvolt = <RPMH_REGULATOR_LEVEL_NOM_L1>;
@@ -24,24 +35,30 @@
 			opp-microvolt = <RPMH_REGULATOR_LEVEL_NOM>;
 		};
 
-		opp-499200000 {
-			opp-hz = /bits/ 64 <499200000>;
+		opp-490000000 {
+			opp-hz = /bits/ 64 <490000000>;
 			opp-microvolt = <RPMH_REGULATOR_LEVEL_SVS_L2>;
 		};
 
-		opp-427000000 {
-			opp-hz = /bits/ 64 <427000000>;
+		opp-375000000 {
+			opp-hz = /bits/ 64 <375000000>;
 			opp-microvolt = <RPMH_REGULATOR_LEVEL_SVS_L1>;
 		};
 
-		opp-345000000 {
-			opp-hz = /bits/ 64 <345000000>;
+		opp-280000000 {
+			opp-hz = /bits/ 64 <280000000>;
 			opp-microvolt = <RPMH_REGULATOR_LEVEL_SVS>;
 		};
 
-		opp-257000000 {
-			opp-hz = /bits/ 64 <257000000>;
+		opp-175000000 {
+			opp-hz = /bits/ 64 <175000000>;
 			opp-microvolt = <RPMH_REGULATOR_LEVEL_LOW_SVS>;
+		};
+
+
+		opp-75000000 {
+			opp-hz = /bits/ 64 <75000000>;
+			opp-microvolt = <RPMH_REGULATOR_LEVEL_MIN_SVS>;
 		};
 	};
 };
