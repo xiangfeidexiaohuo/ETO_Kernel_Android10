@@ -22,7 +22,7 @@
 
 		opp-755000000 {
 			opp-hz = /bits/ 64 <755000000>;
-			opp-microvolt = <RPMH_REGULATOR_LEVEL_TURBO>;
+			opp-microvolt = <RPMH_REGULATOR_LEVEL_NOM_L3>;
 		};
 
 		opp-675000000 {
